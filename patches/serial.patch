@@ -1,0 +1,11 @@
+--- ./serial.c	2019-11-14 16:49:13.057885025 +0000
++++ ./serial.c	2019-11-14 16:00:53.317285585 +0000
+@@ -13,6 +13,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <errno.h>
++#include <sys/time.h>
+ #include "adapter.h"
+ 
+ #if defined(__WIN32__) || defined(WIN32)
+ 
