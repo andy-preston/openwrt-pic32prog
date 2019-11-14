@@ -23,3 +23,4 @@ Deselect/exclude the following options:
     make package/pic32prog/compile
     file staging_dir/target-mips_mips32_musl/root-brcm63xx/usr/bin/pic32prog
 
+----
