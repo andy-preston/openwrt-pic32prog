@@ -19,8 +19,7 @@ Download and unpack the OpenWRT SDK that suits your target installation
 In the SDK's package directory clone my repository
 
     cd package
-    git clone git@gitlab.com:edgeeffect/openwrt-pic32prog.git
-    mv openwrt-pic32prog pic32prog
+    git clone git@gitlab.com:edgeeffect/openwrt-pic32prog.git pic32prog
     cd ..
     make menuconfig
 
