@@ -15,7 +15,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/pic32prog
 	SECTION:=base
 	CATEGORY:=Utilities
-	DEPENDS:=+libusb
+	DEPENDS:=+libusb +libudev-fbsd
 	TITLE:=Utility for loading data into flash of PIC32 microcontrollers
 	URL:=https://github.com/sergev/pic32prog
 endef
