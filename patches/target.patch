@@ -1,0 +1,44 @@
+--- target.c	2019-11-14 16:00:53.317285585 +0000
++++ target.c	2019-11-14 15:52:08.707992030 +0000
+@@ -293,8 +293,6 @@
+     const char *prefix;
+     adapter_t *(*func)(const char *port, int baud);
+ } serial_tab[] = {
+-    { "stk500",     adapter_open_stk500v2       },  /* Default */
+-    { "an1388",     adapter_open_an1388_uart    },
+     { "ascii",      adapter_open_bitbang        },
+     { 0 },
+ };
+@@ -306,11 +304,6 @@
+     const char *prefix;
+     adapter_t *(*func)(int vid, int pid, const char *serial);
+ } usb_tab[] = {
+-    { "pickit2",    adapter_open_pickit2        },
+-    { "pickit3",    adapter_open_pickit3        },
+-    { "hidboot",    adapter_open_hidboot        },
+-    { "an1388",     adapter_open_an1388         },
+-    { "uhb",        adapter_open_uhb            },
+     { 0 },
+ };
+ 
+@@ -352,19 +345,7 @@
+ 
+     if (!port_name) {
+         /* Autodetect the device from a list of known adapters. */
+-        adapter_t *a = adapter_open_pickit2(0, 0, 0);
+-        if (! a)
+-            a = adapter_open_pickit3(0, 0, 0);
+-#ifdef USE_MPSSE
+-        if (! a)
+-            a = adapter_open_mpsse(0, 0, 0);
+-#endif
+-        if (! a)
+-            a = adapter_open_hidboot(0, 0, 0);
+-        if (! a)
+-            a = adapter_open_an1388(0, 0, 0);
+-        if (! a)
+-            a = adapter_open_uhb(0, 0, 0);
++        adapter_t *a = NULL;
+         return a;
+     }
+ 
