@@ -31,7 +31,7 @@ endef
 
 define Package/pic32prog/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/pic32prog $(1)/usr/bin/
 endef
 
 $(eval $(call BuildPackage,pic32prog))
