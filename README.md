@@ -17,9 +17,9 @@ Deselect/exclude the following options:
 
 
     export LANG=/usr/lib/locale/en_GB
-    ./scripts/feeds update -a
-    ./scripts/feeds install libusb
-    ./scripts/feeds install libudev-fbsd
+    scripts/feeds update -a
+    scripts/feeds install libusb
+    scripts/feeds install libudev-fbsd
     make package/pic32prog/compile
-    file ./staging_dir/target-mips_mips32_musl/root-brcm63xx/usr/bin/pic32prog
+    file staging_dir/target-mips_mips32_musl/root-brcm63xx/usr/bin/pic32prog
 
