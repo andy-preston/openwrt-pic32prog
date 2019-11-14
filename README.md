@@ -1,3 +1,6 @@
+Building
+========
+
 Download and unpack the OpenWRT SDK that suits your target installation
 
 In the SDK's package directory clone my repository
@@ -23,3 +26,21 @@ Now let's build:
     scripts/feeds install libudev-fbsd
     make package/pic32prog/compile
     file staging_dir/target-mips_mips32_musl/root-brcm63xx/usr/bin/pic32prog
+
+Patches
+=======
+
+makefile.patch - target.patch
+-----------------------------
+
+I couldn't get libhidapi to compile and, as I only needed the bitbang target
+for my application, I just stripped out any references to libhidapi from the
+compile.
+
+serial.patch
+------------
+
+I assume, when building on desktop Linux, that `#include <sys/time.h>` is
+included by default or something. When cross-compiling I got loads of errors
+regarding the size of the `timeval` struct that went away when I included this
+header.
