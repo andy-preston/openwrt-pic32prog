@@ -15,6 +15,7 @@ Deselect/exclude the following options:
 * Select all userspace packages by default
 * Select pic32prog under "Utilities"
 
+Now let's build:
 
     export LANG=/usr/lib/locale/en_GB
     scripts/feeds update -a
@@ -22,5 +23,3 @@ Deselect/exclude the following options:
     scripts/feeds install libudev-fbsd
     make package/pic32prog/compile
     file staging_dir/target-mips_mips32_musl/root-brcm63xx/usr/bin/pic32prog
-
-----
