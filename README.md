@@ -47,7 +47,7 @@ makefile.patch - target.patch
 
 I couldn't get libhidapi to compile and, as I only needed the bitbang target
 for my application, I just stripped out any references to libhidapi from the
-compile.
+compile. (Life is too short for GNU Autotools)
 
 serial.patch
 ------------
