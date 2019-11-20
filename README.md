@@ -49,6 +49,9 @@ I couldn't get libhidapi to compile and, as I only needed the bitbang target
 for my application, I just stripped out any references to libhidapi from the
 compile. (Life is too short for GNU Autotools)
 
+This can be fixed when I try a local build in Ubuntu by installing pkg-config.
+I'm not sure if this will work when I try in the OpenWRT SDK... time will tell.
+
 serial.patch
 ------------
 
