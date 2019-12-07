@@ -32,7 +32,7 @@ Deselect/exclude the following options:
 
 Now let's build:
 
-    export LANG=/usr/lib/locale/en_GB
+    export LANG=C
     scripts/feeds update -a
     scripts/feeds install libusb
     scripts/feeds install libudev-fbsd
