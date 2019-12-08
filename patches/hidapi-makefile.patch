@@ -1,7 +1,7 @@
 diff --git makefile makefile
 index 544ea9c..74faa59 100644
---- makefile
-+++ makefile
+--- ./makefile
++++ ./makefile
 @@ -2,19 +2,18 @@ CC              = gcc
  
  GITCOUNT        = $(shell git rev-list HEAD --count)
