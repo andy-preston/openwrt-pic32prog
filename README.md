@@ -30,8 +30,11 @@ Now let's build:
 
     export LANG=C
     scripts/feeds update -a
-    scripts/feeds install libusb
     scripts/feeds install libudev-fbsd
+    scripts/feeds install libc
+    scripts/feeds install libusb-1.0
+    scripts/feeds install librt
+    scripts/feeds install hidapi
     make package/pic32prog/compile
     file staging_dir/target-mips_mips32_musl/root-brcm63xx/usr/bin/pic32prog
 
