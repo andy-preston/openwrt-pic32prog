@@ -8,7 +8,7 @@ index f51716d..0dd89ea 100644
      n = serial_read(buffer, 14, 250);
 +    fprintf(stderr, "\nn = %d (should be 14\n", n);
 +    buffer[15] = 0;
-+    fprintf(stderr, "\nbuffer = %s\n, buffer);
++    fprintf(stderr, "\nbuffer = %s\n", buffer);
  
      if (n == 14 && memcmp(buffer, "ascii ICSP v1", 13) == 0)
          printf(" OK2 - %s\n", buffer);
