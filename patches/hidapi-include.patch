@@ -1,0 +1,52 @@
+diff --git adapter-an1388.c adapter-an1388.c
+index d5b6bde..9797791 100644
+--- ./adapter-an1388.c
++++ ./adapter-an1388.c
+@@ -15,7 +15,7 @@
+ #include <errno.h>
+ 
+ #include "adapter.h"
+-#include "hidapi.h"
++#include <hidapi/hidapi.h>
+ #include "pic32.h"
+ 
+ #define FRAME_SOH           0x01
+diff --git adapter-hidboot.c adapter-hidboot.c
+index d5d3e8f..702d4f4 100644
+--- ./adapter-hidboot.c
++++ ./adapter-hidboot.c
+@@ -15,7 +15,7 @@
+ #include <errno.h>
+ 
+ #include "adapter.h"
+-#include "hidapi.h"
++#include <hidapi/hidapi.h>
+ #include "pic32.h"
+ 
+ /* Bootloader commands */
+diff --git adapter-pickit2.c adapter-pickit2.c
+index 037ce36..c4e9f96 100644
+--- ./adapter-pickit2.c
++++ ./adapter-pickit2.c
+@@ -18,7 +18,7 @@
+ #include <errno.h>
+ 
+ #include "adapter.h"
+-#include "hidapi.h"
++#include <hidapi/hidapi.h>
+ #include "pickit2.h"
+ #include "pic32.h"
+ 
+diff --git adapter-uhb.c adapter-uhb.c
+index c4e2966..4230aee 100644
+--- ./adapter-uhb.c
++++ ./adapter-uhb.c
+@@ -15,7 +15,7 @@
+ #include <errno.h>
+ 
+ #include "adapter.h"
+-#include "hidapi.h"
++#include <hidapi/hidapi.h>
+ #include "pic32.h"
+ 
+ /* Bootloader commands */
