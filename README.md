@@ -7,6 +7,10 @@ An OpenWRT package to cross-compile pic32prog.
 * https://openwrt.org/
 * https://hackaday.io/project/163934-avrnude
 
+This is only being tested against the bitbang adaptor... as that's the only
+adaptor that I use. If you want to use it with another adaptor, I'm afraid
+you're on your own.
+
 Building
 ========
 
@@ -42,7 +46,15 @@ Patches
 serial-handling.patch
 ---------------------
 
-Improved serial IO handling "stolen" from avrdude
+I had a problem that during the initialisation of the bitbang adaptor,
+pic32prog sends the '?' command to the adaptor and expects the string
+"ascii ICSP v1E" or "ascii ICSP v1C" to be returned and I was just getting the
+first character back.
+
+I patched serial.c by "stealing" the serial read function from *avrdude*.
+
+*avrdude* had a loop around it's serial read code that repeatedly re-read the
+source until the required string-length was added to the buffer.
 
 serial-headers.patch
 --------------------
