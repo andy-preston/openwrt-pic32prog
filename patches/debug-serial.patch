@@ -1,0 +1,21 @@
+diff --git serial.c serial.c
+index 71544d1..fe19a5f 100644
+--- ./serial.c
++++ ./serial.c
+@@ -198,6 +198,8 @@ again:
+     FD_SET(fd, &rfds);
+ 
+     got = select(fd + 1, &rfds, 0, 0, &to2);
++    fprintf(stderr, "select got = %d\n", got);
++    
+     if (got < 0) {
+         if (errno == EINTR || errno == EAGAIN) {
+             if (debug_level > 1)
+@@ -216,6 +218,7 @@ again:
+ 
+ #if ! defined(__WIN32__) && ! defined(WIN32)
+     got = read(fd, data, (len > 1024) ? 1024 : len);
++    fprintf(stderr, "read got = %d\n", got);
+     if (got < 0) {
+         fprintf(stderr, "serial_read: read error\n");
+         exit(-1);
