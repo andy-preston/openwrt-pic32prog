@@ -18,7 +18,7 @@ This is my build script, your milage WILL vary
     cd package
     git clone git@gitlab.com:edgeeffect/openwrt-pic32prog.git pic32prog
     cd pic32prog
-    git checkout libhidapi
+    # git checkout libhidapi
     cd ../..
     make menuconfig
     # Deselect "Select all target specific packages by default"
