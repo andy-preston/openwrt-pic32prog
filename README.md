@@ -39,13 +39,13 @@ This is my build script, your milage WILL vary
 Patches
 =======
 
-serial.patch
-------------
+serial-handling.patch
+---------------------
 
 Improved serial IO handling "stolen" from avrdude
 
-serial1.patch
--------------
+serial-headers.patch
+--------------------
 
 I assume, when building on desktop Linux, that `#include <sys/time.h>` is
 included by default or something. When cross-compiling I got loads of errors
