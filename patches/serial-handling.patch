@@ -1,8 +1,35 @@
 diff --git serial.c serial.c
-index 71544d1..09fd351 100644
+index 71544d1..315702f 100644
 --- ./serial.c
 +++ ./serial.c
-@@ -165,6 +165,9 @@ int serial_write(unsigned char *data, int len)
+@@ -153,10 +153,24 @@ int serial_write(unsigned char *data, int len)
+ 
+     if (! WriteFile(fd, data, len, &written, 0))
+         return -1;
+-    return written;
+ #else
+-    return write(fd, data, len);
++    int written, wc, remain;
++    unsigned char * p;
++    remain = len;
++    written = 0;
++    p = data;
++    while (remain) {
++        wc = write(fd, p, (remain > 1024) ? 1024 : remain);
++        if (wc < 0) {
++            fprintf(stderr, "serial_write: error: %s\n", strerror(errno));
++            exit(-1);
++        }
++        p += wc;
++        remain -= wc;
++        written += wc;
++    }
+ #endif
++    return written;
+ }
+ 
+ /*
+@@ -165,6 +179,9 @@ int serial_write(unsigned char *data, int len)
   */
  int serial_read(unsigned char *data, int len, int timeout_msec)
  {
@@ -12,7 +39,7 @@ index 71544d1..09fd351 100644
  #if defined(__WIN32__) || defined(WIN32)
      DWORD got;
      COMMTIMEOUTS ctmo;
-@@ -185,42 +188,69 @@ int serial_read(unsigned char *data, int len, int timeout_msec)
+@@ -185,42 +202,69 @@ int serial_read(unsigned char *data, int len, int timeout_msec)
          fprintf(stderr, "serial_read: read error\n");
          exit(-1);
      }
