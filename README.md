@@ -5,7 +5,7 @@ An OpenWRT package to cross-compile pic32prog.
 
 * https://github.com/sergev/pic32prog
 * https://openwrt.org/
-* https://hackaday.io/project/163934-avrnude
+* https://github.com/andy-preston/avrnude
 
 This is only being tested against the bitbang adaptor... as that's the only
 adaptor that I use. If you want to use it with another adaptor, I'm afraid
